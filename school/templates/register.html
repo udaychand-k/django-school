@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+<title>register
+</title>
+<style>
+ form {
+background-color:#3333;
+text-align: center;
+border: 5px solid black;
+ }
+
+</style>
+</head>
+<body>
+    {% for i in messages %}
+    <h3 style="text-align:center; color:red;"> {{ i }} </h3>
+        {% endfor %}
+<h1 style="text-align:center; background-color: black; color:white; border:2px solid red;"> PLEASE REGISTER HERE :)</h1>
+<div>
+<form action='/register/' method="POST">
+    {% csrf_token %}
+    <p>first name :<input type="text" name="fn" placeholder="Enter your first name"></p>
+    <p>last name :<input type="text" name="ln" placeholder="Enter your last name"></p>
+<p>username :<input type="text" name="un" placeholder="Enter your user name" required></p>
+    <p>Email ID :<input type="email" name='e' placeholder="Enter your email id" required></p>
+    <p>password :<input type="password" name='p' placeholder="Enter your password" required></p>
+    <p>confirm password :<input type="password" name='cp' placeholder="confir your password" required></p>
+    <p><input type="submit" value="Register"></p>
+</form>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+<title>LOGIN
+</title>
+<style>
+ form {
+background-color:#3333;
+text-align: center;
+border: 5px solid black;
+ }
+
+</style>
+</head>
+<body>
+    {% for i in messages %}
+    <h3 style="text-align:center; color: red;"> <em>{{ i }}</em>
+        </h3>
+        {% endfor %}
+<h1 style="text-align:center; border:2px solid red; background-color: black;color:white;"> PLEASE LOGIN HERE :)</h1>
+<form action='/login/' method="POST">
+    {% csrf_token %}
+    <p>username :<input type="text" name="un" placeholder="Enter your user name" required></p>
+        <p>password :<input type="password" name='p' placeholder="Enter your password" required></p>
+        <p><input type="submit" value="Login"></p>
+</form>
+
+</body>
+
+</html>

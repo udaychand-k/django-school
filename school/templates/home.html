@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name='keywords' content="uday,udaychand,chand">
+    <meta http-equiv='refresh' content="14">
+    <meta name='viewport' content="width-device-width" initial-scale="1.0">
+    <meta name='author' content="udaychand141">
+    <meta name='description' content="this is web-platform where you can explore unlimited websites">
+<title>school
+</title>
+<style>
+    ul {
+        margin:0;
+        padding:0;
+        list-style-type:none;
+        overflow:hidden;
+        background-color:#333;
+    }
+    li {
+        float:left;
+    }
+    li a {
+        display:block;
+        color:white;
+        text-align:center;
+        padding:14px 16px;
+        text-decoration:none;
+    }
+    a:hover {
+        background-color:green;
+    }
+    marquee {
+        display:inline-block;
+        color: white;
+        background-color:black;
+        padding:0px;
+        margin:0px;
+        border:1px solid blue;
+
+    }
+</style>
+</head>
+<body>
+        <ul>
+            <li> <a href="/home">Home </a> </li>
+            {% if user.is_authenticated %}
+            <li> <a href="/logout" >Logout </a> </li>
+            {% else %}
+
+            <li> <a href="/register"  >Register </a> </li>
+            <li> <a href="/login" >Login </a> </li>
+
+            {% endif %}
+            <li style="float : right"> <a href="/about"  target="_blank" >About</a> </li>
+        </ul>
+        {% if not user.is_authenticated %}
+    <marquee>    <p>Hello User ! Welcome to this page...!</p></marquee>
+    <marquee>       <p>Please get REGISTER to get additional perks  </p></marquee>
+    <marquee>       <p>Already had account Please get LOGIN </p> </marquee>
+    {%endif%}
+{% for i in messages %}
+<h3> {{ i }} </h3>
+<h2> Hello {{ user.first_name }}...!Welcome to this site </h2>
+    {% endfor %}
+</body>
+
+</html>
