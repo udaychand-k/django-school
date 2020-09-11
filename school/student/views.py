@@ -54,3 +54,5 @@ def logout(request):
     return redirect('/home')
 def about(request):
     return render(request,'about.html')
+def article(request):
+    return render(request,'article.html')

@@ -1,13 +1,70 @@
+
 <!DOCTYPE html>
+{% load static %}
+<html>
 <head>
-<title>about
-</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>udaychand141</title>
+<meta name="description" content="Thoughts, reviews and ideas since 1999."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/screen.css' %}"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 </head>
-<body>
-<h1 style="text-align:center">  we are with you to help you guide you :) </h1>
-<form action='/about' method="POST">
-</form>
+<body class="post-template page-template page">
+<div class="site-wrapper">
+	<nav class="main-nav overlay clearfix">
+	<a class="blog-logo" href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="Udaychand141"/></a>
+	<ul id="menu">
+		<li class="nav-home nav-current" role="presentation"><a href="/home/">Home</a></li>
+		<li class="nav-article-example" role="presentation"><a href="/article/">Article</a></li>
+		{% if user.is_authenticated %}
+            <li> <a href="/logout" >Logout </a> </li>
+            {% else %}
+
+            <li> <a href="/register"  >Register </a> </li>
+            <li> <a href="/login" >Login </a> </li>
+
+            {% endif %}
+		<li class="nav-about-us" role="presentation"><a href="/about/">About</a></li>
+		<span class="socialheader">
+		<a href="#"><span class='symbol'>circletwitterbird</span></a>
+		<a href="#"><span class='symbol'>circlefacebook</span></a>
+		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
+		<a href="mailto:udaychand141@gmail.com"><span class='symbol'>circleemail</span></a>
+		</span>
+	</ul>
+	</nav>
+	<header class="main-header post-head " style="{% static 'background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/10/10174958/fas-compressor.jpg)' %}">
+	<div class="vertical">
+		<div class="main-header-content inner">
+			<h1 class="post-title">About Me</h1>
+		</div>
+	</div>
+	</header>
+	<main class="content" role="main">
+	<article class="post tag-fashion tag-art page">
+	<section class="post-content">
+	<p>
+		<strong>The blog desscribes udaychand. Read my blog and you will learn how do i get this website .</strong>
+	</p>
+
+	</section>
+	</article>
+	</main>
+	<footer class="site-footer clearfix">
+	<a href="#top" id="back-to-top" class="back-top"></a>
+	<div class="text-center">
+		<a href="home.html">udaychand</a> &copy; 2020<br/>
+		 <a href="https://udaychand141.pythonanywhere.com">udaychand141</a>
+	</div>
+	</footer>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="{% static 'assets/js/masonry.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/index.js' %}"></script>
 
 </body>
-
 </html>

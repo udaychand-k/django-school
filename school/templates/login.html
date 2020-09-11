@@ -16,6 +16,15 @@ border: 5px solid black;
     <h3 style="text-align:center; color: red;"> <em>{{ i }}</em>
         </h3>
         {% endfor %}
+        <!--{% if messages %}
+        <div class= "row">
+      {% for message in messages %}
+      <div {% if message.tags %}  class="alert alert-{{messages.tags}}" role="alert"> {% endif %} >
+          {{ message }}
+      </div>
+      {% endfor %}
+      </div>
+      {% endif %}-->
 <h1 style="text-align:center; border:2px solid red; background-color: black;color:white;"> PLEASE LOGIN HERE :)</h1>
 <form action='/login/' method="POST">
     {% csrf_token %}

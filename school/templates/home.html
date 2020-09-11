@@ -1,50 +1,32 @@
+
 <!DOCTYPE html>
 {% load static %}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name='keywords' content="uday,udaychand,chand">
-    <meta http-equiv='refresh' content="14">
-    <meta name='viewport' content="width-device-width" initial-scale="1.0">
-    <meta name='author' content="udaychand141">
-    <meta name='description' content="this is web-platform where you can explore unlimited websites">
-<title>school
-</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>udaychand</title>
+<meta name="description" content="Thoughts, reviews and ideas since 1999."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/screen.css' %}"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 <style>
-    ul {
-        margin:0;
-        padding:0;
-        list-style-type:none;
-        overflow:hidden;
-        background-color:#333;
-    }
-    li {
-        float:left;
-    }
-    li a {
-        display:block;
-        color:white;
-        text-align:center;
-        padding:14px 16px;
-        text-decoration:none;
-    }
-    a:hover {
-        background-color:green;
-    }
-    marquee {
-        display:inline-block;
-        color: white;
-        background-color:black;
-        padding:0px;
-        margin:0px;
-        border:1px solid blue;
-
-    }
+#menu a:hover{
+	background-color: green;
+	padding: 10px;
+}
 </style>
 </head>
-<body>
-        <ul>
-            <li> <a href="/home">Home </a> </li>
-            {% if user.is_authenticated %}
+<body class="home-template">
+<div class="site-wrappesr">
+	<nav class="main-nav overlay clearfix">
+	<a class="blog-logo" href="home.html"><img src=" {% static 'assets/img/logo.png' %}" alt="udaychand141"/></a>
+	<ul id="menu">
+		{% if user.is_authenticated %}
+		<li class="nav-home nav-current" role="presentation"><a href="home.html">Dashboard</a></li>
+		<li class="nav-article-example" role="presentation"><a href="/article/">Article</a></li>
+
             <li> <a href="/logout" >Logout </a> </li>
             {% else %}
 
@@ -52,17 +34,244 @@
             <li> <a href="/login" >Login </a> </li>
 
             {% endif %}
-            <li style="float : right"> <a href="/about"  target="_blank" >About</a> </li>
-        </ul>
-        {% if not user.is_authenticated %}
-    <marquee>    <p>Hello User ! Welcome to this page...!</p></marquee>
-    <marquee>       <p>Please get REGISTER to get additional perks  </p></marquee>
-    <marquee>       <p>Already had account Please get LOGIN </p> </marquee>
-    {%endif%}
-{% for i in messages %}
-<h3> {{ i }} </h3>
-<h2> Hello {{ user.first_name }}...!Welcome to this site </h2>
-    {% endfor %}
+		<li class="nav-about-us" role="presentation"><a href="/about/">About</a></li>
+		<span class="socialheader">
+		<a href="#"><span class='symbol'>circletwitterbird</span></a>
+		<a href="#"><span class='symbol'>circlefacebook</span></a>
+		<a href="#"><span class='symbol'>circlegoogleplus</span></a>
+		<a href="mailto:udaychand141@gmail.com"><span class='symbol'>circleemail</span></a>
+		</span>
+	</ul>
+	</nav>
+	<header class="main-header " style="{% static 'background-image: url(assets/img/intro.jpg)'%}"/>
+	<div class="vertical">
+		<div class="main-header-content inner">
+			{% for i in messages %}
+		<marque>    <h3 style="text-align:center; color:red;border:1px solid blue"> {{ i }} </h3></marque>
+		        {% endfor %}
+			<!--
+				{% if messages %}
+		        <div class= "row">
+		      {% for message in messages %}
+		      <div {% if message.tags %}  class="alert alert-success" role="alert"> {% endif %} >
+		          {{ message }}
+		      </div>
+		      {% endfor %}
+		      </div>
+		      {% endif %}
+		  -->
+			<h1 class="page-title">EVERYTHING IS HERE</h1>
+			<div class="entry-title-divider">
+				<span></span><span></span><span></span>
+			</div>
+			<h2 class="page-description">Ecommerce, reviews and projects of 2020.</h2>
+		</div>
+	</div>
+	<a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+	</header>
+	<main id="content" class="content" role="main">
+	<div class="wraps">
+		<img src="{% static 'assets/img/shadow.png' %}" class="wrapshadow">
+		<div class="grid">
+			<div class="grid-item">
+				<article class="post">
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">Retro &amp; New</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						The blog desscribes udaychand. Read my blog and you will learn how do i get this website .</<a class="read-more" href="/retro-is-the-new-modern/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					<time class="post-date" datetime="2020-10-11">10 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post tag-romance">
+				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j2-520x780-520x600.jpg"></a>
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">Dare to try, dare to explore</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+					 Good to be doing...! <a class="read-more" href="article.html">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="assets/img/gravatar.jpg" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					on <a href="#">render</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post">
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">Winter Collection</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						Having determined to deviate from our direct course. <a class="read-more" href="/winter-collection/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post tag-romance">
+				<a href="/having-a-first-chance/"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j5-520x780-520x600.jpg"></a>
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">Having a first chance</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						We arrived at world wide website finally <a class="read-more" href="/having-a-first-chance/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					on <a href="#">rage</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post tag-romance featured">
+				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j3-320x320.jpg"></a>
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">Trending Colors</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						The website finally exploring well<a class="read-more" href="/trending-colors/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					on <a href="#">trending</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post">
+				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j8-520x780-520x600.jpg"></a>
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">What we saw in California</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						We reccommend you to follow us<a class="read-more" href="/what-we-saw-in-california/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post tag-romance">
+				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/30160348/sep4.jpg"></a>
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">Shadows &amp; Lights</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						walked through many awkward moments<a class="read-more" href="/shadows/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					on <a href="#">ecommerce</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post featured">
+				<a href="article.html"><img src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/10175658/j12-520x668-520x600.jpg"></a>
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">The Book of Delight</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						we with stand with all of them<a class="read-more" href="/drinking-whenever-you-are-ready-or-even-if-youre-not/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+			<div class="grid-item">
+				<article class="post">
+				<div class="wrapgriditem">
+					<header class="post-header">
+					<h2 class="post-title"><a href="article.html">Blogger</a></h2>
+					</header>
+					<section class="post-excerpt">
+					<p>
+						You must try to understand that when I finished school I was as raw as raw could be. I had never travelled anywhere on my own, <a class="read-more" href="/reading-fashion-eating-books/">&raquo;</a>
+					</p>
+					</section>
+					<footer class="post-meta">
+					<img class="author-thumb" src="{% static 'assets/img/gravatar.jpg' %}" alt="udaychand" nopin="nopin"/>
+					<a href="author.html">udaychand</a>
+					<time class="post-date" datetime="2020-10-11">11 september 2020</time>
+					</footer>
+				</div>
+				</article>
+			</div>
+		</div>
+		<nav class="pagination" role="navigation">
+		<span class="page-number">Page 1 of 2</span>
+		<a class="older-posts" href="page2.html">Older Posts &rarr;</a>
+		</nav>
+	</div>
+	</main>
+	<footer class="site-footer clearfix">
+	<a href="#top" id="back-to-top" class="back-top"></a>
+	<div class="text-center">
+		<a href="index.html">udaychand</a> &copy; 2020<br/>
+		Udaychand141 <a href="https://udaychand.pythonanywhere.com">udaychand.in</a>
+	</div>
+	</footer>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="{% static 'assets/js/masonry.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/index.js' %}"></script>
 </body>
-
 </html>

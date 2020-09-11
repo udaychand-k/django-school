@@ -27,7 +27,7 @@ SECRET_KEY = '7n+&9rc^aaui)h3+ss&lx3*tn^1az_p0&wwci-$b=(y00ej0dc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'school.urls'
@@ -122,3 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR,];
+STATIC_ROOT = BASE_DIR / 'assests';
+MEDIA_URL ='/media/'
+
+MEDIA_ROOT = BASE_DIR/'media'
